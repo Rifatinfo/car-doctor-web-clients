@@ -1,3 +1,4 @@
+import { FaArrowRight } from "react-icons/fa";
 
 const ServicesCart = ({ service }) => {
     const { title, img, price } = service;
@@ -9,11 +10,11 @@ const ServicesCart = ({ service }) => {
                     alt="Shoes"
                     className="rounded-xl" />
             </figure>
-            <div className="card-body items-center text-center">
+            <div className="card-body">
                 <h2 className="card-title">{title}</h2>
-                <p>If a dog chews shoes whose shoes does he choose?</p>
-                <div className="card-actions">
-                    <button className="btn btn-primary">Buy Now</button>
+                <div className="flex justify-between items-center  gap-40 text-[#FF3811]">
+                    <p className="font-bold">Price : {price}</p>
+                    <p><FaArrowRight /></p>
                 </div>
             </div>
         </div>
