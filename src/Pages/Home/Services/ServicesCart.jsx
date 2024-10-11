@@ -12,7 +12,7 @@ const ServicesCart = ({ service }) => {
         <h2 className="card-title">{title}</h2>
         <div className="flex justify-between items-center  gap-40 text-[#FF3811]">
           <p className="font-bold">Price : {price}</p>
-          <Link to={`/checkout/${_id}`}>
+          <Link to={`/book/${_id}`}>
             <p>
               <FaArrowRight />
             </p>
