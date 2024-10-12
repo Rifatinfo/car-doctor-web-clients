@@ -14,16 +14,33 @@ const BookServices = () => {
         const date = form.date.value;
         const email = form.email.value;
         const phone = form.phone.value;
-        const order = {
+        const booking = {
             customerName: name,
             email,
             date,
             img,
+            service : title , 
             phone,
-            service: _id,
+            service_id : _id,
             price: price // Use the raw price here, not formatted with '$'
         };
-        console.log(order);
+        console.log(booking);
+
+        fetch('http://localhost:5000/bookings', {
+           method : 'POST',
+           headers : {
+            'content-type' : 'application/json'
+           },
+           body : JSON.stringify(booking)           
+        })
+        .then(res => res.json())
+        .then(data => {
+            console.log(data);
+            if(data.insertedId){
+                alert('services book successfully')
+            }
+            form.reset();
+        })
     };
 
     return (
